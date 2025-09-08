@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+/* Global styles */
+:root {
+  --bg: #0b1020;
+  --fg: #e6efff;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  @apply bg-[var(--bg)] text-white antialiased font-sans;
+  /* Subtle mesh + grid background */
+  background-image:
+    radial-gradient(1200px 600px at 10% 10%, rgba(47,134,255,0.12), transparent 60%),
+    radial-gradient(800px 400px at 90% 20%, rgba(29,78,216,0.10), transparent 55%),
+    radial-gradient(1000px 500px at 50% 120%, rgba(17,24,39,0.6), transparent 60%),
+    repeating-linear-gradient(0deg, rgba(255,255,255,0.02), rgba(255,255,255,0.02) 1px, transparent 1px, transparent 36px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.02) 1px, transparent 1px, transparent 36px);
+  background-size: auto, auto, auto, 36px 36px, 36px 36px;
+}
+
+.container-px {
+  @apply px-5 sm:px-8 lg:px-10;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* reveal animations removed for stability */
+
+/* Creative blob mask for hero image */
+.blob-mask {
+  clip-path: polygon(58% 0%, 100% 18%, 92% 66%, 54% 100%, 6% 88%, 0% 38%, 12% 8%);
+}
+
+@keyframes floatY {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+.float-soft {
+  animation: floatY 6s ease-in-out infinite;
+}
